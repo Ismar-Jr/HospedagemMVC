@@ -1,0 +1,41 @@
+@model HospedagemMVC.Models.Suite
+
+@{
+    ViewData["Title"] = "Editar suite"; // Define o título da página
+}
+
+<h1>
+    Editar suite <!-- Título principal da página -->
+</h1>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar"> <!-- Formulário para editar a suíte, com ação "Editar" -->
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label> <!-- Rótulo para o campo "Categoria" -->
+                <select asp-for="Categoria" class="form-control"> <!-- Menu suspenso para selecionar a categoria da suíte -->
+                    <option value="Basica">Básica</option> <!-- Opção para categoria básica -->
+                    <option value="Dupla">Dupla</option> <!-- Opção para categoria dupla -->
+                    <option value="Premium">Premium</option> <!-- Opção para categoria premium -->
+                    <option value="Presidencial">Presidencial</option> <!-- Opção para categoria presidencial -->
+                </select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="ValorDiaria" class="control-label"></label> <!-- Rótulo para o campo "ValorDiaria" -->
+                <input asp-for="ValorDiaria" class="form-control"/> <!-- Campo de entrada para o valor da diária da suíte -->
+            </div>
+            <br/>
+            <div>
+                <input type="submit" value="Editar" class="btn btn-primary"/> <!-- Botão de submissão do formulário com texto "Editar" -->
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr/>
+<div>
+    <a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal de suítes -->
+</div>

@@ -1,0 +1,57 @@
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<HospedagemMVC.Models.Pessoa>
+@{
+ViewData["Title"] = "Lista de Hóspedes";
+int idReserva = ViewBag.IdReserva is int ? (int)ViewBag.IdReserva : 0; // Assuma que isso é passado para a View de alguma forma
+}
+
+<h2>Hóspedes</h2>
+<p>
+    <a asp-action="ReservaPessoa">Cadastrar novo hóspede</a>
+</p>
+
+<div class="search-form">
+    <form asp-action="ReservaPessoa" method="get">
+        <div class="form-group">
+            <input type="text" name="searchString" class="form-control" placeholder="Buscar por nome">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+</div>
+
+<div class="table-container" style="overflow-x: auto;">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().Id)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Sobrenome)</th>
+            <th>@Html.DisplayNameFor(model => model.First().DataNascimento)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Genero)</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Sobrenome)</td>
+            <td>@Html.DisplayFor(modelItem => item.DataNascimentoFormatted)</td>
+            <td>@Html.DisplayFor(modelItem => item.Genero)</td>
+            <td>
+                <!-- Formulário para cada pessoa com botão de submit -->
+                <form asp-action="AdicionarPessoaAReserva" method="post">
+                    <input type="hidden" name="idReserva" value="@idReserva" />
+                    <input type="hidden" name="idPessoa" value="@item.Id" />
+                    <button type="submit" class="btn btn-primary">+</button>
+                </form>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { PageCountAndCurrentLocationFormat = "Página {0}" })

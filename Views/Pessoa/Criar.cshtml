@@ -1,0 +1,52 @@
+@model HospedagemMVC.Models.Pessoa
+@{
+ViewData["Title"] = "Cadastrar novo hóspede"; <!-- Define o título da página, que é usado no cabeçalho do navegador e no título da janela. -->
+}
+
+<h1>
+    Cadastrar novo hóspede <!-- Cabeçalho principal da página, visível como o título na View. -->
+</h1>
+
+<hr/> <!-- Linha horizontal para separar visualmente o título do formulário abaixo. -->
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar"> <!-- Inicia um formulário que, ao ser submetido, chamará a ação 'Criar' no controlador. -->
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label> <!-- Label para o campo de nome, associado ao modelo 'Pessoa'. -->
+                <input asp-for="Nome" class="form-control"/> <!-- Campo de entrada de texto para o nome, vinculado à propriedade 'Nome' do modelo. -->
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="control-label"></label> <!-- Label para o campo de sobrenome. -->
+                <input asp-for="Sobrenome" class="form-control"/> <!-- Campo de entrada de texto para o sobrenome, vinculado à propriedade 'Sobrenome' do modelo. -->
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="DataNascimento" class="control-label"></label> <!-- Label para o campo de data de nascimento. -->
+                <input asp-for="DataNascimento" type="date" class="form-control"/> <!-- Campo de entrada de data para a data de nascimento, configurado para aceitar apenas datas. -->
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX"/>
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="Genero" class="control-label"></label> <!-- Label para o campo de seleção de gênero. -->
+                <select asp-for="Genero" class="form-control"> <!-- Caixa de seleção para escolher o gênero, vinculada à propriedade 'Genero' do modelo. -->
+                    <option value="Masculino">Masculino</option> <!-- Opção 'Masculino' para o campo de gênero. -->
+                    <option value="Feminino">Feminino</option> <!-- Opção 'Feminino' para o campo de gênero. -->
+                </select>
+            </div>
+            <br/>
+            <div>
+                <input type="submit" value="Criar" class="btn btn-primary"/> <!-- Botão para submeter o formulário, que enviará os dados para o servidor. -->
+            </div>
+        </form>
+    </div>
+</div>
+<hr/>
+<div>
+    <a asp-action="Index">Voltar</a> <!-- Link para retornar à página principal ou à lista anterior, chamando a ação 'Index'. -->
+</div>

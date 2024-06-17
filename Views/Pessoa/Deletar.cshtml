@@ -1,0 +1,56 @@
+@model HospedagemMVC.Models.Pessoa
+@{
+ViewData["Title"] = "Deletar Hóspede"; <!-- Define o título da página, que será usado pelo navegador e cabeçalhos da página. -->
+}
+
+<h1 style="color: red">Deseja realmente deletar esse hóspede? OPERAÇÃO IRREVERSÍVEL!</h1>
+<!-- Cabeçalho em vermelho alertando o usuário sobre a irreversibilidade da ação de deletar um hóspede. -->
+
+<div>
+    <dl class="row">
+        <!-- Início da lista de descrição que exibe as propriedades do objeto Pessoa em formato de detalhamento. -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome) <!-- Label para o nome, mostra "Nome". -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome) <!-- Valor do nome do hóspede. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Sobrenome) <!-- Label para o sobrenome, mostra "Sobrenome". -->
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(x => x.Sobrenome) <!-- Valor do sobrenome do hóspede. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataNascimento) <!-- Label para a data de nascimento, mostra "Data de Nascimento". -->
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(x => x.DataNascimentoFormatted) <!-- Valor da data de nascimento formatada. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Genero) <!-- Label para o gênero, mostra "Gênero". -->
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(x => x.Genero) <!-- Valor do gênero do hóspede. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Telefone) <!-- Exibe o nome da propriedade 'Gênero'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Telefone) <!-- Mostra o valor da propriedade 'Gênero' (por exemplo, Masculino/Feminino). -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ReservaAtiva) <!-- Exibe o nome da propriedade 'Gênero'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.ReservaAtiva) <!-- Mostra o valor da propriedade 'Gênero' (por exemplo, Masculino/Feminino). -->
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="Deletar">
+    <!-- Formulário que, ao ser submetido, invocará a ação 'Deletar' no controlador. -->
+    <input type="submit" value="Deletar" class="btn btn-danger"/> <!-- Botão de submissão para deletar o hóspede, com um estilo que indica uma ação de cuidado. -->
+</form>
+
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página de listagem ou principal, chamando a ação 'Index' do controlador. -->

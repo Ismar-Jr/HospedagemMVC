@@ -1,0 +1,54 @@
+@model HospedagemMVC.Models.Pessoa
+
+@{
+ViewData["Title"] = "Editar hóspede"; // Define o título da página
+}
+
+<h1>
+    Editar hóspede <!-- Título principal da página -->
+</h1>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar"> <!-- Formulário para editar os detalhes do hóspede, com ação definida como "Editar" -->
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label> <!-- Rótulo para o campo "Nome" -->
+                <input asp-for="Nome" class="form-control"/> <!-- Campo de entrada para o nome do hóspede -->
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="control-label"></label> <!-- Rótulo para o campo "Sobrenome" -->
+                <input asp-for="Sobrenome" class="form-control"/> <!-- Campo de entrada para o sobrenome do hóspede -->
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="DataNascimento" class="control-label"></label> <!-- Rótulo para o campo "DataNascimento" -->
+                <input asp-for="DataNascimento" type="date" class="form-control"/> <!-- Campo de entrada para a data de nascimento do hóspede -->
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" type="tel" class="form-control" placeholder="(XX) XXXXX-XXXX"/>
+            </div>
+            <div class="form-group">
+                <br/>
+                <label asp-for="Genero" class="control-label"></label> <!-- Rótulo para o campo "Genero" -->
+                <select asp-for="Genero" class="form-control"> <!-- Campo de seleção para o gênero do hóspede -->
+                    <option value="Masculino">Masculino</option> <!-- Opção para gênero masculino -->
+                    <option value="Feminino">Feminino</option> <!-- Opção para gênero feminino -->
+                </select>
+            </div>
+            <br/>
+            <div>
+                <input type="submit" value="Editar" class="btn btn-primary"/> <!-- Botão de envio do formulário com texto "Editar" -->
+            </div>
+        </form>
+    </div>
+</div>
+<hr/>
+
+<div>
+    <a asp-action="Index">Voltar</a> <!-- Link para a página "Index", que provavelmente lista todos os hóspedes -->
+</div>

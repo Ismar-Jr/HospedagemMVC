@@ -1,0 +1,39 @@
+@model HospedagemMVC.Models.Reserva
+
+@{
+    <!-- Define o título da página -->
+ViewData["Title"] = "Detalhes do reserva";
+}
+
+<h1>Detalhes</h1> <!-- Título principal da página -->
+
+<div>
+    <dl class="row"> <!-- Lista de descrição para exibir os detalhes da reserva -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.SuiteId) <!-- Exibe o nome da propriedade "IdSuite" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.SuiteId) <!-- Exibe o valor da propriedade "IdSuite" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataEntrada) <!-- Exibe o nome da propriedade "DataEntrada" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.DataEntradaFormatted) <!-- Exibe o valor formatado da propriedade "DataEntrada" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataSaida) <!-- Exibe o nome da propriedade "DataSaida" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.DataSaidaFormatted) <!-- Exibe o valor formatado da propriedade "DataSaida" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ReservaPessoas) <!-- Exibe o nome da propriedade "ReservaPessoas" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.ReservaPessoas) <!-- Exibe o valor da propriedade "ReservaPessoas" -->
+        </dd>
+    </dl>
+</div>
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> | <!-- Link para editar a reserva -->
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal de reservas -->

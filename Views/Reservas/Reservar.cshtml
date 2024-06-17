@@ -1,0 +1,13 @@
+@model HospedagemMVC.Models.Reserva
+
+<form asp-action="ConfirmarReserva" asp-controller="Reservas">
+    <input type="hidden" asp-for="SuiteId" />
+    
+    <label asp-for="DataEntrada">Data de Entrada:</label>
+    <input type="date" asp-for="DataEntrada" required />
+
+    <label asp-for="DataSaida">Data de Saída:</label>
+    <input type="date" asp-for="DataSaida" required />
+    
+    <button type="submit">Continuar</button>
+</form>

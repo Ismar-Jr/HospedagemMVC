@@ -1,0 +1,42 @@
+@model HospedagemMVC.Models.Reserva
+
+@{
+    <!-- Define o título da página -->
+ViewData["Title"] = "Deletar reserva";
+}
+
+<h1 style="color: red">Deseja realmente deletar essa reserva? OPERAÇÃO IRREVERSÍVEL!</h1> <!-- Título principal da página com estilo vermelho -->
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.SuiteId) <!-- Exibe o nome da propriedade "IdSuite" -->
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.SuiteId) <!-- Exibe o valor da propriedade "IdSuite" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataEntradaFormatted) <!-- Exibe o nome da propriedade "DatEntradaFormatted" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.DataEntradaFormatted) <!-- Exibe o valor da propriedade "DatEntradaFormatted" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataSaidaFormatted) <!-- Exibe o nome da propriedade "DataSaidaFormatted" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.DataSaidaFormatted) <!-- Exibe o valor da propriedade "DataSaidaFormatted" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ReservaPessoas) <!-- Exibe o nome da propriedade "ReservaPessoas" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.ReservaPessoas.Count) <!-- Exibe o número de elementos na propriedade "ReservaPessoas" -->
+        </dt>
+    </dl>
+</div>
+
+<form asp-action="Deletar"> <!-- Formulário para deletar a reserva, com ação "Deletar" -->
+    <input type="submit" value="Deletar" class="btn btn-danger"/> <!-- Botão de submissão para deletar a reserva com estilo vermelho -->
+</form>
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal de reservas -->

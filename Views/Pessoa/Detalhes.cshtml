@@ -1,0 +1,65 @@
+@model HospedagemMVC.Models.Pessoa
+@{
+ViewData["Title"] = "Detalhes do hóspede"; <!-- Define o título da página como "Detalhes do hóspede". -->
+}
+
+<h1>Detalhes</h1> <!-- Cabeçalho principal da página, apresentando o título "Detalhes". -->
+
+<div>
+    <dl class="row">
+        <!-- Utiliza a tag <dl> para uma lista de definições (description list), onde cada entrada consiste em um termo (<dt>) e uma descrição (<dd>). -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome) <!-- Exibe o nome da propriedade 'Nome' do modelo de forma dinâmica. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome) <!-- Mostra o valor atual da propriedade 'Nome' do objeto Pessoa. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Sobrenome) <!-- Exibe o nome da propriedade 'Sobrenome' usando helper DisplayNameFor. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Sobrenome) <!-- Mostra o valor da propriedade 'Sobrenome'. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataNascimento) <!-- Exibe a etiqueta 'Data de Nascimento'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.DataNascimentoFormatted)  <!-- Exibe a data de nascimento formatada para uma melhor apresentação. -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Genero) <!-- Exibe o nome da propriedade 'Gênero'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Genero) <!-- Mostra o valor da propriedade 'Gênero' (por exemplo, Masculino/Feminino). -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Telefone) <!-- Exibe o nome da propriedade 'Gênero'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Telefone) <!-- Mostra o valor da propriedade 'Gênero' (por exemplo, Masculino/Feminino). -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ReservaAtiva) <!-- Exibe o nome da propriedade 'Gênero'. -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.ReservaAtiva) <!-- Mostra o valor da propriedade 'Gênero' (por exemplo, Masculino/Feminino). -->
+        </dd>
+    </dl>
+</div>
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> | <!-- Link para a ação de edição, passando o ID do hóspede como parâmetro na URL. -->
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal ou lista de hóspedes. -->
+
+<button id="selecionarParaReserva" class="btn btn-primary">Selecionar para Reserva</button> <!-- Botão para iniciar um processo de reserva para o hóspede selecionado. -->
+
+@section scripts {
+<script>
+    $(document).ready(function () {
+        $('#selecionarParaReserva').click(function () {
+            var pessoaId = '@Model.Id'; <!-- Armazena o ID do hóspede em uma variável JavaScript. -->
+            window.location.href = '@Url.Action("Create", "Reservas")?pessoaId=' + pessoaId; <!-- Redireciona para a página de criação de reserva, anexando o ID do hóspede na query string. -->
+        });
+    });
+</script>
+}
+
+

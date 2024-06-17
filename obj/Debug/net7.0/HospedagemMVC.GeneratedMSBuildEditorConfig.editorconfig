@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HospedagemMVC
+build_property.RootNamespace = HospedagemMVC
+build_property.ProjectDir = C:\Users\IsmarJunior\Documents\Curso_C#\HospedagemMVC\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\IsmarJunior\Documents\Curso_C#\HospedagemMVC
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Pessoa/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXENyaWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Pessoa/Deletar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXERlbGV0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Pessoa/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXERldGFsaGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Pessoa/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Pessoa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVzc29hXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/Deletar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGVsZXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRGV0YWxoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/ReservaPessoa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcUmVzZXJ2YVBlc3NvYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Reservas/Reservar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXNcUmVzZXJ2YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Suite/Criar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VpdGVcQ3JpYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Suite/Deletar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VpdGVcRGVsZXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Suite/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VpdGVcRGV0YWxoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Suite/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VpdGVcRWRpdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Suite/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VpdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/IsmarJunior/Documents/Curso_C\#/HospedagemMVC/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-go457w7d1z

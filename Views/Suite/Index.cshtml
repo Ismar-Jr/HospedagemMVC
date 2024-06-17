@@ -1,0 +1,44 @@
+@model IEnumerable<HospedagemMVC.Models.Suite> 
+@{
+ViewData["Title"] = "Lista de suítes"; // Define o título da página
+}
+
+<h2>Suítes</h2> <!-- Título secundário da página -->
+
+<p>
+    <a asp-action="Criar">Nova suíte</a> <!-- Link para criar uma nova suíte -->
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th> <!-- Cabeçalho da coluna para o ID da suíte -->
+        <th>@Html.DisplayNameFor(model => model.Capacidade)</th> <!-- Cabeçalho da coluna para a capacidade da suíte -->
+        <th>@Html.DisplayNameFor(model => model.Categoria)</th> <!-- Cabeçalho da coluna para a categoria da suíte -->
+        <th>@Html.DisplayNameFor(model => model.ValorDiaria)</th> <!-- Cabeçalho da coluna para o valor da diária da suíte -->
+        <th>@Html.DisplayNameFor(model => model.Ocupado)</th> <!-- Cabeçalho da coluna para o status de ocupação da suíte -->
+        <th>Ações</th> <!-- Cabeçalho da coluna para as ações disponíveis -->
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) // Loop para iterar sobre cada suíte na coleção de suítes
+    {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Id)</td> <!-- Exibe o ID da suíte na célula -->
+        <td>@Html.DisplayFor(modelItem => item.Capacidade)</td> <!-- Exibe a capacidade da suíte na célula -->
+        <td>@Html.DisplayFor(modelItem => item.Categoria)</td> <!-- Exibe a categoria da suíte na célula -->
+        <td>@item.ValorDiaria.ToString("C", new System.Globalization.CultureInfo("pt-BR"))</td> <!-- Exibe o valor da diária da suíte formatado como moeda brasileira na célula -->
+        <td>@Html.DisplayFor(modelItem => item.Ocupado)</td> <!-- Exibe o status de ocupação da suíte na célula -->
+        <td>
+            <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> <!-- Link para editar a suíte -->
+            <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> <!-- Link para ver os detalhes da suíte -->
+            <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a> <!-- Link para deletar a suíte -->
+            @if (!item.Ocupado) // Verifica se a suíte não está ocupada
+            {
+            <a asp-action="Reservar" asp-controller="Reservas" asp-route-idSuite="@item.Id">Reservar</a> <!-- Link para reservar a suíte -->
+            }
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+@model HospedagemMVC.Models.Suite 
+
+@{
+    ViewData["Title"] = "Detalhes da suíte"; // Define o título da página
+}
+
+<h1>Detalhes</h1> <!-- Título principal da página -->
+
+<div>
+    <dl class="row">
+        <!-- Lista de definição para exibir os detalhes da suíte -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Capacidade) <!-- Exibe o nome da propriedade "Capacidade" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Capacidade) <!-- Exibe o valor da propriedade "Capacidade" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Categoria) <!-- Exibe o nome da propriedade "Categoria" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Categoria) <!-- Exibe o valor da propriedade "Categoria" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ValorDiaria) <!-- Exibe o nome da propriedade "ValorDiaria" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.ValorDiaria) <!-- Exibe o valor da propriedade "ValorDiaria" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Ocupado) <!-- Exibe o nome da propriedade "Ocupado" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(x => x.Ocupado) <!-- Exibe o valor da propriedade "Ocupado" -->
+        </dd>
+    </dl>
+</div>
+
+@if (!Model.Ocupado) 
+{
+<a asp-action="Create" asp-controller="Reservas" asp-route-idSuite="@Model.Id" class="btn btn-primary">Reservar</a> <!-- Link para reservar a suíte -->
+}
+
+<a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> | <!-- Link para editar a suíte -->
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal de suítes -->

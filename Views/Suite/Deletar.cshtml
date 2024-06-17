@@ -1,0 +1,41 @@
+@model HospedagemMVC.Models.Suite 
+
+@{
+    ViewData["Title"] = "Deletar Suite"; // Define o título da página
+}
+
+<h1 style="color: red">Deseja realmente deletar a suite? OPERAÇÃO IRREVERSÍVEL!</h1> <!-- Título principal da página em vermelho para chamar a atenção do usuário -->
+
+<div>
+    <dl class="row">
+        <!-- Lista de definição para exibir os detalhes da suíte -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Categoria) <!-- Exibe o nome da propriedade "Categoria" -->
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Categoria) <!-- Exibe o valor da propriedade "Categoria" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Capacidade) <!-- Exibe o nome da propriedade "Capacidade" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.Capacidade) <!-- Exibe o valor da propriedade "Capacidade" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.ValorDiaria) <!-- Exibe o nome da propriedade "ValorDiaria" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.ValorDiaria) <!-- Exibe o valor da propriedade "ValorDiaria" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Ocupado) <!-- Exibe o nome da propriedade "Ocupado" -->
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayFor(x => x.Ocupado) <!-- Exibe o valor da propriedade "Ocupado" -->
+        </dt>
+    </dl>
+</div>
+<form asp-action="Deletar"> <!-- Formulário para deletar a suíte, com ação "Deletar" -->
+    <input type="submit" value="Deletar" class="btn btn-danger"/> <!-- Botão de submissão do formulário com estilo vermelho e texto "Deletar" -->
+</form>
+<a asp-action="Index">Voltar</a> <!-- Link para voltar à página principal de suítes -->

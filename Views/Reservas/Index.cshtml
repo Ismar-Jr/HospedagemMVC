@@ -1,0 +1,72 @@
+@using X.PagedList.Mvc.Core 
+@model X.PagedList.IPagedList<Reserva>
+
+@{
+ViewData["Title"] = "Lista de Reservas"; // Define o título da página
+}
+
+<h2>Lista de reservas</h2> <!-- Título secundário da página -->
+<p>
+    <a asp-action="Index" asp-controller="Suite">Fazer nova reserva</a> <!-- Link para criar uma nova reserva -->
+</p>
+
+<div class="table-container" style="overflow-x: auto;"> <!-- Div para conter a tabela com uma barra de rolagem horizontal -->
+    <table class="table"> <!-- Tabela para exibir as reservas -->
+        <thead> <!-- Cabeçalho da tabela -->
+        <tr> <!-- Linha do cabeçalho -->
+            <th>
+                @Html.DisplayNameFor(model => model.First().Id) <!-- Exibe o nome da coluna com base no nome do atributo do modelo -->
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().SuiteId) <!-- Exibe o nome da coluna com base no nome do atributo do modelo -->
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DataEntrada) <!-- Exibe o nome da coluna com base no nome do atributo do modelo -->
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DataSaida) <!-- Exibe o nome da coluna com base no nome do atributo do modelo -->
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ValorTotal) <!-- Exibe o nome da coluna com base no nome do atributo do modelo -->
+            </th>
+            <th>
+                Quantidade de Pessoas na Reserva <!-- Cabeçalho personalizado para a quantidade de pessoas na reserva -->
+            </th>
+            <th></th> <!-- Coluna vazia para ações -->
+        </tr>
+        </thead>
+        <tbody> <!-- Corpo da tabela -->
+        @foreach (var item in Model) 
+        {
+        <tr> <!-- Linha da tabela para cada reserva -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Id) <!-- Exibe o valor do atributo "Id" da reserva -->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SuiteId) <!-- Exibe o valor do atributo "IdSuite" da reserva -->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataEntradaFormatted) <!-- Exibe o valor formatado do atributo "DataEntrada" da reserva -->
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaidaFormatted) <!-- Exibe o valor formatado do atributo "DataSaida" da reserva -->
+            </td>
+            <td>
+                @item.ValorTotal.ToString("C", new System.Globalization.CultureInfo("pt-BR")) <!-- Exibe o valor formatado do atributo "DataSaida" da reserva -->
+            </td>
+            <td>
+                @item.ReservaPessoas.Count <!-- Exibe o número de pessoas associadas à reserva -->
+            </td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> <!-- Link para a ação "Editar" com o ID da reserva como parâmetro -->
+                <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> <!-- Link para a ação "Detalhes" com o ID da reserva como parâmetro -->
+                <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a> <!-- Link para a ação "Deletar" com o ID da reserva como parâmetro -->
+                <a asp-action="ReservaPessoa" asp-route-id="@item.Id">Adicionar Hóspede</a>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { PageCountAndCurrentLocationFormat = "Página {0}" }) <!-- Renderiza o paginador com base no modelo, onde "Index" é a ação que

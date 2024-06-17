@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html> <!-- Declaração do tipo de documento HTML -->
+<html lang="en"> <!-- Tag raiz do documento, especificando o idioma -->
+<head>
+    <meta charset="utf-8" /> <!-- Definição da codificação de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Meta tag para configuração de visualização em dispositivos móveis -->
+    <title>@ViewData["Title"] - Hotel Royal</title> <!-- Título da página, dinâmico com ViewData -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> <!-- Importação de folha de estilos Bootstrap -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" /> <!-- Importação de folha de estilos personalizada -->
+    <link rel="stylesheet" href="~/HospedagemMVC.styles.css" asp-append-version="true" /> <!-- Importação de folha de estilos específica para HospedagemMVC -->
+</head>
+<body>
+<header>
+    <!-- Cabeçalho da página -->
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <!-- Barra de navegação -->
+        <div class="container-fluid">
+            <!-- Container fluid para ajuste de largura -->
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hotel Royal</a>
+            <!-- Marca na barra de navegação -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> <!-- Ícone do botão de toggle -->
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <!-- Conteúdo da barra de navegação -->
+                <ul class="navbar-nav flex-grow-1">
+                    <!-- Lista de itens de navegação -->
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <!-- Link para a página inicial -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Pessoa" asp-action="Index">Hóspedes</a>
+                        <!-- Link para a página de cadastro de pessoa -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Suite" asp-action="Index">Suítes</a>
+                        <!-- Link para a página de cadastro de suíte -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Reservas" asp-action="Index">Reservas</a>
+                        <!-- Link para a página de reserva -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <!-- Conteúdo principal -->
+    <main role="main" class="pb-3">
+        @RenderBody() <!-- Renderização do corpo da página -->
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <!-- Rodapé da página -->
+    <div class="container">
+        <!-- Container para ajuste de largura -->
+        &copy; 2024 - HospedagemMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <!-- Texto de direitos autorais e link para a política de privacidade -->
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script> <!-- Importação do jQuery -->
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> <!-- Importação do Bootstrap bundle (incluindo popper.js) -->
+<script src="~/js/site.js" asp-append-version="true"></script> <!-- Importação de script personalizado -->
+@await RenderSectionAsync("Scripts", required: false) <!-- Renderização de seção de scripts (opcional) -->
+</body>
+</html>
